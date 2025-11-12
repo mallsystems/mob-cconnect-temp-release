@@ -1,0 +1,25 @@
+{
+  "pages": {
+    "/_app": []
+  },
+  "devFiles": [],
+  "polyfillFiles": [
+    "static/chunks/c252d_next_dist_build_polyfills_polyfill-nomodule.js"
+  ],
+  "lowPriorityFiles": [
+    "static/development/_ssgManifest.js",
+    "static/development/_buildManifest.js"
+  ],
+  "rootMainFiles": [
+    "static/chunks/[turbopack]_browser_dev_hmr-client_hmr-client_ts_effed2a4._.js",
+    "static/chunks/c252d_next_dist_compiled_react-dom_00d1f8e7._.js",
+    "static/chunks/c252d_next_dist_compiled_react-server-dom-turbopack_1caa9c76._.js",
+    "static/chunks/c252d_next_dist_compiled_next-devtools_index_b9378d54.js",
+    "static/chunks/c252d_next_dist_compiled_67dcdd98._.js",
+    "static/chunks/c252d_next_dist_client_21a9d46e._.js",
+    "static/chunks/c252d_next_dist_a4cb6e30._.js",
+    "static/chunks/c252d_@swc_helpers_cjs_874bd7a1._.js",
+    "static/chunks/GitHub_mob-cconnect-temp-release_a0ff3932._.js",
+    "static/chunks/turbopack-GitHub_mob-cconnect-temp-release_95b765da._.js"
+  ]
+}
