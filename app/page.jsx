@@ -14,7 +14,7 @@ export default function App() {
 
         if (token) {
             // Reconstruct the deep link
-            const appLink = `cconnect://open?token=${token}`;
+            const appLink = `com.cqms://open?token=${token}`;
             setDeepLink(appLink);
             setStatusMessage("Launching cConnect...");
             
@@ -87,7 +87,7 @@ export default function App() {
 
                     <a href="https://github.com/mallsystems/mob-cconnect-temp-release/releases/download/v1.1/Connect.by.Cursor.apk" 
                        className="w-full text-center inline-block bg-[#AADEEC] text-gray-900 font-bold text-lg py-3 px-10 rounded-lg shadow hover:bg-[#55A6DA] hover:text-white transition-all">
-                       Download APK
+                       Download Android Application (APK)
                     </a>
                 </div>
             </div>
