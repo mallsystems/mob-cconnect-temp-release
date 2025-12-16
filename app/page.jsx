@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-export default function App() {
+export default function VerifyPage() {
     const [isDarkMode, setIsDarkMode] = useState(false);
     const [statusMessage, setStatusMessage] = useState(""); 
     const [deepLink, setDeepLink] = useState(null);
@@ -13,18 +13,23 @@ export default function App() {
         const token = params.get('token');
 
         if (token) {
-            // Reconstruct the deep link
-            const appLink = `com.cqms://open?token=${token}`;
+            // ✅ UPDATED: Use the 'verify' path to match App.tsx config
+            // We use 'cconnect://' as the primary scheme, but 'com.cqms://' works too if configured.
+            const appLink = `cconnect://verify?token=${token}`;
+            
             setDeepLink(appLink);
             setStatusMessage("Launching cConnect...");
             
-            // Attempt auto-redirect
+            // Attempt auto-redirect to the app
             window.location.href = appLink;
             
-            // Fallback message
+            // Fallback message if app is not installed
             setTimeout(() => {
                  setStatusMessage("App didn't open? Click 'Launch App' below.");
             }, 2500);
+        } else {
+            // Optional: Handle case where user visits /verify without a token
+            setStatusMessage("No token found. Please use the link from your email.");
         }
     }, []);
 
