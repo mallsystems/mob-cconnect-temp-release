@@ -14,239 +14,370 @@ var _s = __turbopack_context__.k.signature();
 ;
 function App() {
     _s();
-    const [isDarkMode, setIsDarkMode] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
-    const [statusMessage, setStatusMessage] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
-    // 1. LOGIC: Handle the Email Redirect (Fixing the Gmail Issue)
+    const [mounted, setMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "App.useEffect": ()=>{
-            // Check if there is a token in the website URL (passed from the email)
-            const params = new URLSearchParams(window.location.search);
-            const token = params.get('token');
-            if (token) {
-                setStatusMessage("Launching cConnect...");
-                // Attempt to open the app via Deep Link
-                window.location.href = `cconnect://open?token=${token}`;
-                // Optional: If app doesn't open in 3 seconds, show a message
-                setTimeout({
-                    "App.useEffect": ()=>{
-                        setStatusMessage("App didn't open? Please download it below.");
-                    }
-                }["App.useEffect"], 3000);
-            }
-        }
-    }["App.useEffect"], []);
-    // 2. LOGIC: Fonts & Dark Mode (Your existing code)
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "App.useEffect": ()=>{
-            const linkPreconnect1 = document.createElement('link');
-            linkPreconnect1.rel = 'preconnect';
-            linkPreconnect1.href = 'https://fonts.googleapis.com';
-            const linkPreconnect2 = document.createElement('link');
-            linkPreconnect2.rel = 'preconnect';
-            linkPreconnect2.href = 'https://fonts.gstatic.com';
-            linkPreconnect2.crossOrigin = 'true';
+            setMounted(true);
             const linkFont = document.createElement('link');
-            linkFont.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap';
+            linkFont.href = 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap';
             linkFont.rel = 'stylesheet';
-            document.head.appendChild(linkPreconnect1);
-            document.head.appendChild(linkPreconnect2);
             document.head.appendChild(linkFont);
-            document.body.style.fontFamily = "'Poppins', sans-serif";
-            return ({
-                "App.useEffect": ()=>{
-                    document.head.removeChild(linkPreconnect1);
-                    document.head.removeChild(linkPreconnect2);
-                    document.head.removeChild(linkFont);
-                    document.body.style.fontFamily = '';
-                }
-            })["App.useEffect"];
         }
     }["App.useEffect"], []);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "App.useEffect": ()=>{
-            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            const handleChange = {
-                "App.useEffect.handleChange": (e)=>setIsDarkMode(e.matches)
-            }["App.useEffect.handleChange"];
-            handleChange(mediaQuery);
-            mediaQuery.addEventListener('change', handleChange);
-            return ({
-                "App.useEffect": ()=>mediaQuery.removeEventListener('change', handleChange)
-            })["App.useEffect"];
-        }
-    }["App.useEffect"], []);
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "App.useEffect": ()=>{
-            if (isDarkMode) {
-                document.documentElement.classList.add('dark');
-            } else {
-                document.documentElement.classList.remove('dark');
-            }
-        }
-    }["App.useEffect"], [
-        isDarkMode
-    ]);
-    const handleImageError = (e)=>{
-        e.target.src = 'https://placehold.co/128x128/cccccc/FFFFFF?text=Icon&font=inter';
-    };
+    if (!mounted) return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "min-h-screen bg-gray-50 dark:bg-gray-950"
+    }, void 0, false, {
+        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+        lineNumber: 16,
+        columnNumber: 26
+    }, this);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex flex-col items-center justify-center min-h-screen p-4 transition-colors duration-300",
+        className: "bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-gray-100 flex flex-col items-center justify-center min-h-screen p-6 font-['Poppins',_sans-serif]",
         children: [
-            statusMessage && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mb-6 bg-blue-100 border-l-4 border-blue-500 text-blue-700 p-4 rounded shadow-md max-w-4xl w-full",
-                role: "alert",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "font-bold",
-                        children: "System Message"
-                    }, void 0, false, {
-                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                        lineNumber: 82,
-                        columnNumber: 21
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        children: statusMessage
-                    }, void 0, false, {
-                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                        lineNumber: 83,
-                        columnNumber: 21
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                lineNumber: 81,
-                columnNumber: 17
-            }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "bg-white dark:bg-gray-800 rounded-2xl shadow-2xl max-w-4xl w-full mx-auto overflow-hidden grid md:grid-cols-2",
+                className: "bg-white dark:bg-gray-900 rounded-[2rem] shadow-2xl shadow-gray-200/50 dark:shadow-black/50 max-w-5xl w-full mx-auto overflow-hidden grid md:grid-cols-2 border border-gray-100 dark:border-gray-800",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "p-8 md:p-12",
+                        className: "p-12 md:p-16 flex flex-col justify-center relative overflow-hidden",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                src: "/images/cConnect.svg",
-                                alt: "cConnect Icon",
-                                className: "w-20 h-20 mb-6 rounded-2xl shadow-lg",
-                                onError: handleImageError
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute top-0 left-0 w-full h-full bg-gradient-to-br from-blue-50/50 to-transparent dark:from-blue-900/10 dark:to-transparent pointer-events-none"
                             }, void 0, false, {
                                 fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                                lineNumber: 91,
+                                lineNumber: 25,
                                 columnNumber: 21
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                className: "text-3xl md:text-4xl font-bold mb-2 text-gray-900 dark:text-white",
-                                children: "Connect by Cursor"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative z-10",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "w-20 h-20 mb-10 rounded-2xl shadow-lg bg-white dark:bg-gray-800 p-1 flex items-center justify-center",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "/images/cConnect.svg",
+                                            alt: "cConnect",
+                                            className: "w-full h-full rounded-xl"
+                                        }, void 0, false, {
+                                            fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                            lineNumber: 29,
+                                            columnNumber: 29
+                                        }, this)
+                                    }, void 0, false, {
+                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                        lineNumber: 28,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
+                                        className: "text-5xl font-bold mb-6 tracking-tight text-gray-900 dark:text-white",
+                                        children: "cConnect"
+                                    }, void 0, false, {
+                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                        lineNumber: 32,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-medium mb-10 max-w-md",
+                                        children: "Simplify Your Healthcare Journey with cConnect"
+                                    }, void 0, false, {
+                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                        lineNumber: 36,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center gap-3 bg-green-50 dark:bg-green-900/20 w-fit px-4 py-2 rounded-full border border-green-100 dark:border-green-900/30",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "relative flex h-2.5 w-2.5",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 42,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 43,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                lineNumber: 41,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-xs font-bold text-green-700 dark:text-green-400 uppercase tracking-wider",
+                                                children: "System Operational"
+                                            }, void 0, false, {
+                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                lineNumber: 45,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                        lineNumber: 40,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                                lineNumber: 97,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-gray-600 dark:text-gray-400 mb-6 text-lg",
-                                children: "Version 1.1"
-                            }, void 0, false, {
-                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                                lineNumber: 98,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-base text-gray-700 dark:text-gray-300",
-                                children: "Welcome! You can get the official app directly from us here while we finalize our listing on the Google Play Store."
-                            }, void 0, false, {
-                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                                lineNumber: 99,
+                                lineNumber: 27,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                        lineNumber: 90,
+                        lineNumber: 23,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "bg-gray-50 dark:bg-gray-900 p-8 md:p-12 flex flex-col items-center justify-center",
+                        className: "bg-gray-50/50 dark:bg-gray-800/30 flex flex-col border-l border-gray-100 dark:border-gray-800",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-2xl font-semibold mb-6 text-gray-800 dark:text-gray-200",
-                                children: "Get the App"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "p-12 flex flex-col items-center border-b border-gray-100 dark:border-gray-800",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                        className: "text-xs font-bold uppercase tracking-[0.2em] text-gray-400 dark:text-gray-500 mb-8",
+                                        children: "Official Release"
+                                    }, void 0, false, {
+                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                        lineNumber: 55,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex flex-col gap-4 w-full max-w-[220px]",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: "https://play.google.com/store/apps/details?id=com.cursor.cConnect",
+                                                className: "group w-full py-2 px-4 bg-black text-white rounded-xl flex items-center gap-3 hover:bg-gray-900 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 border border-gray-800",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                        src: "/images/playstore.svg",
+                                                        alt: "",
+                                                        className: "w-8 h-8"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 58,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex flex-col items-start",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-[10px] font-medium uppercase leading-none opacity-80",
+                                                                children: "Get it on"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                                lineNumber: 60,
+                                                                columnNumber: 37
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-lg font-bold leading-tight font-sans",
+                                                                children: "Google Play"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                                lineNumber: 61,
+                                                                columnNumber: 37
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 59,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                lineNumber: 57,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: "https://apps.apple.com/mt/app/connect-by-cursor/id6737701304",
+                                                className: "group w-full py-2 px-4 bg-black text-white rounded-xl flex items-center gap-3 hover:bg-gray-900 transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 border border-gray-800",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                        src: "/images/apple.svg",
+                                                        alt: "",
+                                                        className: "w-7 h-7 ml-0.5"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 65,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                        className: "flex flex-col items-start ml-1",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-[10px] font-medium leading-none opacity-80",
+                                                                children: "Download on the"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                                lineNumber: 67,
+                                                                columnNumber: 37
+                                                            }, this),
+                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-lg font-bold leading-tight font-sans",
+                                                                children: "App Store"
+                                                            }, void 0, false, {
+                                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                                lineNumber: 68,
+                                                                columnNumber: 37
+                                                            }, this)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 66,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                lineNumber: 64,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                        lineNumber: 56,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                                lineNumber: 106,
+                                lineNumber: 54,
                                 columnNumber: 21
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "https://github.com/mallsystems/mob-cconnect-temp-release/releases/download/v1.1/Connect.by.Cursor.apk",
-                                className: "w-full text-center inline-block bg-[#AADEEC] text-gray-900 font-bold text-lg py-4 px-10 rounded-lg shadow-lg hover:bg-[#55A6DA] hover:text-white focus:outline-none focus:ring-4 focus:ring-[#55A6DA]/50 dark:focus:ring-[#AADEEC]/50 transition-all duration-300 transform hover:scale-105",
-                                children: "Download Application"
-                            }, void 0, false, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "p-12 flex flex-col items-center bg-blue-50/50 dark:bg-blue-900/10 flex-grow justify-center",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex items-center gap-3 mb-8",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "bg-blue-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-md uppercase tracking-wider shadow-sm shadow-blue-200 dark:shadow-none",
+                                                children: "Early Access"
+                                            }, void 0, false, {
+                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                lineNumber: 77,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                                className: "text-xs font-bold uppercase tracking-[0.2em] text-blue-600 dark:text-blue-400",
+                                                children: "Beta Program"
+                                            }, void 0, false, {
+                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                lineNumber: 78,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                        lineNumber: 76,
+                                        columnNumber: 25
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex flex-col gap-4 w-full max-w-[240px]",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: "https://play.google.com/store/apps/details?id=com.cursor.cConnect",
+                                                className: "group w-full py-4 px-6 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl text-sm font-bold flex items-center justify-center gap-4 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-md transition-all text-gray-700 dark:text-gray-200",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                        src: "/images/playstore.svg",
+                                                        alt: "",
+                                                        className: "w-6 h-6 transition-transform group-hover:scale-110"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 83,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: "Play Store Beta"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 84,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                lineNumber: 82,
+                                                columnNumber: 29
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                                href: "https://testflight.apple.com/join/6hGtkQKw",
+                                                className: "group w-full py-4 px-6 bg-[#1C1C1E] text-white rounded-2xl text-sm font-bold flex items-center justify-center gap-4 hover:bg-black hover:shadow-xl hover:-translate-y-0.5 transition-all",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                                        src: "/images/apple.svg",
+                                                        alt: "",
+                                                        className: "w-6 h-6 transition-transform group-hover:scale-110"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 87,
+                                                        columnNumber: 33
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        children: "Join TestFlight"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                        lineNumber: 88,
+                                                        columnNumber: 33
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                                lineNumber: 86,
+                                                columnNumber: 29
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
+                                        lineNumber: 81,
+                                        columnNumber: 25
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                                lineNumber: 108,
-                                columnNumber: 21
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-sm text-center text-gray-500 dark:text-gray-400 mt-8",
-                                children: 'You may need to "Allow installs from unknown sources" in your Android settings.'
-                            }, void 0, false, {
-                                fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                                lineNumber: 115,
+                                lineNumber: 75,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                        lineNumber: 105,
+                        lineNumber: 51,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                lineNumber: 87,
+                lineNumber: 20,
                 columnNumber: 13
             }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-center justify-center gap-6 py-8",
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "flex flex-col items-center justify-center",
-                    children: [
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "text-sm font-bold text-gray-500 dark:text-gray-400",
-                            children: "Powered by"
-                        }, void 0, false, {
-                            fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                            lineNumber: 124,
-                            columnNumber: 21
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                            src: "/images/cursor.png",
-                            alt: "CURSOR Logo",
-                            className: "h-5 w-auto mt-1",
-                            onError: (e)=>{
-                                e.target.src = 'https://placehold.co/100x24/cccccc/FFFFFF?text=Logo&font=inter';
-                            }
-                        }, void 0, false, {
-                            fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                            lineNumber: 125,
-                            columnNumber: 21
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                    lineNumber: 123,
-                    columnNumber: 17
-                }, this)
-            }, void 0, false, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$GitHub$2f$mob$2d$cconnect$2d$temp$2d$release$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
+                className: "mt-12 text-center text-gray-400 dark:text-gray-600 text-sm font-medium",
+                children: [
+                    "© ",
+                    new Date().getFullYear(),
+                    " Cursor Ltd. All rights reserved."
+                ]
+            }, void 0, true, {
                 fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-                lineNumber: 122,
+                lineNumber: 95,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/GitHub/mob-cconnect-temp-release/app/page.jsx",
-        lineNumber: 77,
+        lineNumber: 19,
         columnNumber: 9
     }, this);
 }
-_s(App, "bkddSSkvk6iYPGVLebR3ZUPRP+I=");
+_s(App, "LrrVfNW3d1raFE0BNzCTILYmIfo=");
 _c = App;
 var _c;
 __turbopack_context__.k.register(_c, "App");

@@ -1,7 +1,7 @@
 var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/app/page.js")
 R.c("server/chunks/ssr/c252d_next_dist_750febea._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__a2ce0174._.js")
-R.c("server/chunks/ssr/c252d_302ca98d._.js")
+R.c("server/chunks/ssr/c252d_d4ea3ef9._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__e8a2741f._.js")
 R.c("server/chunks/ssr/GitHub_mob-cconnect-temp-release_app_d719b6da._.js")
 R.c("server/chunks/ssr/c252d_next_dist_client_components_builtin_global-error_03534e6d.js")

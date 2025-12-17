@@ -1,0 +1,3 @@
+module.exports=[19287,a=>{a.v({className:"poppins_dba653d3-module__G6mg4G__className",variable:"poppins_dba653d3-module__G6mg4G__variable"})},29949,a=>{"use strict";var b=a.i(97863),c=a.i(19287);let d={className:c.default.className,style:{fontFamily:"'Poppins', 'Poppins Fallback'",fontStyle:"normal"}};function e({children:a}){return(0,b.jsx)("html",{lang:"en",suppressHydrationWarning:!0,children:(0,b.jsx)("body",{className:d.className,children:a})})}null!=c.default.variable&&(d.variable=c.default.variable),a.s(["default",()=>e,"metadata",0,{title:"Download Connect by Cursor App",description:"Connect by Cursor Official App"}],29949)}];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__87cd9a40._.js.map
